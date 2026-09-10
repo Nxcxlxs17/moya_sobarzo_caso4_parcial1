@@ -8,8 +8,7 @@
 
 /*Color de la navbar */
 .nav-bar{
-    background-color:rgb(179, 159, 219);
-
+    background-color:rgb(159, 197, 219);
 }
 
 
@@ -25,7 +24,7 @@
 
 /*Header que posee el encabezado de la ventana de login*/
 .contenedor-encabezado{
-    background-color:rgb(179, 159, 219);
+    background-color:rgb(159, 197, 219);
 
     padding: 5px;
     

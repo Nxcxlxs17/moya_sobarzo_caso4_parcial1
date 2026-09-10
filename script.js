@@ -2,7 +2,7 @@ const listaUsuarios = [
     {   
         id: 1,
         nombre: "Nicolas Perez",
-        username: "nico@duoc.cl", 
+        username: "nico@profesor.duoc.cl", 
         password: "nico1234",
         telefono: "917111111",
         techDevice: [{device: "Smartwatch", serial: "PRODUCT11111"}],
@@ -28,6 +28,7 @@ const listaUsuarios = [
     }
 ]
 
+let dispositivosTemporales =[];
 
 
 const formLogin = document.getElementById("cuerpo-login");
@@ -57,12 +58,40 @@ if (formLogin){
 }   
 
 
-const btnRegisterUser = document.getElementById("btnRegisterUser")
-if(btnRegisterUser){
-    btnRegisterUser.addEventListener("click", function(event){
-        
-        window.location.href = "registro.html";
-    
+// -------------------------------------------------------------
+// 1. EVENTO BOTÓN "REGISTRAR DISPOSITIVO"
+// -------------------------------------------------------------
+const btnSubmitDevice = document.getElementById("btnSubmitDevice");
+
+if (btnSubmitDevice) {
+    btnSubmitDevice.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        const inputDevice = document.getElementById("device").value.trim();
+        const inputSerial = document.getElementById("serial").value.trim();
+
+        const tiposValidos = ["Smartwatch", "Banda Deportiva", "Ciclocomputador", "Audífonos"];
+        const regexSerial = /^[a-zA-Z0-9]{12}$/;
+
+        if (!tiposValidos.includes(inputDevice)) {
+            alert("Tipo de dispositivo no válido. Debe ser: Smartwatch, Banda Deportiva, Ciclocomputador o Audífonos.");
+            return;
+        }
+
+        if (!regexSerial.test(inputSerial)) {
+            alert("El número de serie debe tener exactamente 12 caracteres alfanuméricos.");
+            return;
+        }
+
+        // Guardar en el arreglo temporal
+        dispositivosTemporales.push({
+            device: inputDevice,
+            serial: inputSerial
+        });
+
+        // Limpiar los campos para ingresar otro
+        document.getElementById("device").value = "";
+        document.getElementById("serial").value = "";
     });
 }
 
@@ -79,11 +108,7 @@ if(formRegistro && !formLogin) {
         const password = document.getElementById("password").value;
         const passwordConfirmation = document.getElementById("password-confirmation").value;
         const phone = document.getElementById("phone").value.trim();
-        const techDevice = document.getElementById("device").value.trim();
-        const serialNumb = document.getElementById("serial").value.trim();
-
-
-
+        
         let errores = [];
 
         if(nombre === "") {
@@ -94,10 +119,8 @@ if(formRegistro && !formLogin) {
 
         if(username === ""){
             errores.push("El correo electrónico no puede estar vacío")
-        } else if (!username.endsWith("@duoc.cl")){
+        } else if (!username.endsWith("@duoc.cl") && !username.endsWith("@profesor.duoc.cl")){
             errores.push("El correo debe terminar en @duoc.cl o @profesor.duoc.cl");
-        } else if (!username.endsWith("@profesor.duoc.cl")){
-            errores.push("El correo debe terminar en @profesor.duoc.cl")
         } else if (username.length > 60) {
             errores.push("El correo no puede tener más de 60 caracteres.")
         } else {
@@ -165,6 +188,26 @@ if(formRegistro && !formLogin) {
             }
 
             
+            // Validar Dispositivos: Si no presionó "Registrar dispositivo", toma lo que escribió actualmente
+            const inputDevice = document.getElementById("device").value.trim();
+            const inputSerial = document.getElementById("serial").value.trim();
+
+            if (dispositivosTemporales.length === 0) {
+                const tiposValidos = ["Smartwatch", "Banda Deportiva", "Ciclocomputador", "Audífonos"];
+                const regexSerial = /^[a-zA-Z0-9]{12}$/;
+
+                if (tiposValidos.includes(inputDevice) && regexSerial.test(inputSerial)) {
+                    dispositivosTemporales.push({
+                        device: inputDevice,
+                        serial: inputSerial
+                    });
+                } else {
+                    errores.push("Debe registrar al menos un dispositivo válido.");
+                }
+            }
+
+
+
 
             if(errores.length > 0){
                 alert("Por favor corrige los siguientes errores: \n\n- " + errores.join("\n- "));
@@ -175,12 +218,12 @@ if(formRegistro && !formLogin) {
                     username: username,
                     password: password,
                     telefono: phone || "No especificado",
-                    generos: generosSeleccionados
+                    techDevice: dispositivosTemporales
                 };
                 
                 listaUsuarios.push(nuevoUsuario);
 
-                console.log("Usuario registrado con exito.");
+                console.log("Usuario registrado con exito.", nuevoUsuario);
                 console.log("Lista actualizada: ", listaUsuarios);
 
                 alert("Registro exitoso Usuario guardado.");

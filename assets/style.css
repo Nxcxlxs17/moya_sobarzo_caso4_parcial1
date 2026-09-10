@@ -1,0 +1,73 @@
+
+/*Fuente para toda la página */
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/*Color de la navbar */
+.nav-bar{
+    background-color:rgb(179, 159, 219);
+
+}
+
+
+/*Contenedor del la ventana de login*/
+.login-container{
+    width: 400px;
+    
+    background-color: rgb(205, 241, 229);
+
+    padding: 0px;
+    
+}
+
+/*Header que posee el encabezado de la ventana de login*/
+.contenedor-encabezado{
+    background-color:rgb(179, 159, 219);
+
+    padding: 5px;
+    
+}
+
+
+/*Contenedor de la sección donde está la ventana de login */
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin-top: 250px;
+}
+
+.containerR{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin-top: 250px;
+}
+
+/*Contenedor que posee el encabezado del login*/
+.container-title{
+
+    margin-bottom: 15px;
+
+    margin-top: 0px;
+
+    padding-top: 0px;
+
+}
+
+/*Botones del formulario*/
+.submitb{
+    text-align: center;
+    padding: 20px;
+}
+
+
+/*Form con los datos del login*/
+.cuerpo-login{
+    padding: 10px;
+}

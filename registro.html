@@ -3,31 +3,76 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Parcial 1, Caso 4</title>
+    <title>Caso 3</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">    
     <link rel="stylesheet" href="assets/style.css"> 
 </head>
 
-<body>
-    <section class="texto-general"> <!--Sección de la navbar-->
+  <body>
+    
+        <section class="texto-general"> <!--Sección de la navbar-->
         <nav class="nav-bar">
             <div class="nav-wrapper">
-              <a href="#" class="brand-logo center">TECNOFIT</a>
+              <a href="#" class="brand-logo center">GameZone</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                  <li><a href="login.html">Login</a></li>
+                  <li><a href="login.html">Inicio de Sesión</a></li>
               </ul>
               <ul id="nav-mobile" class="left hide-on-med-and-down">
-                  <li><a href="dispositivos.html">Dispositivos</a></li>
+                  <li><a href="home.html">Home</a></li>
               </ul>
             </div>
         </nav>
-    </section> 
+        </section>  
 
+      
+        <section class="containerR"> <!--Sección de la ventana de registro-->
+          <div class="inner-register-container">
+            <header class="contenedor-encabezado"> 
+             <h6 class="container-title">Registro de usuario</h6>
+            </header> 
+                  <form class="cuerpo-login">
+                  <label for="nombre">NOMBRE COMPLETO</label><br>
+                  <input type="text" id="nombre" name="nombre"><br>
 
+                  <label for="username">CORREO</label><br>
+                  <input type="email" id="username" name="username"><br>
 
+                  <label for="mail-confirmation">CORREO</label><br>
+                  <input type="email" id="mail-confirmation" name="mail-confirmation"><br>
 
+                  <label for="password">CONTRASEÑA</label><br>
+                  <input type="password" id="password" name="password"><br>
 
+                  <label for="password-confirmation">CONFIRMAR CONTRASEÑA</label><br>
+                  <input type="password" id="password-confirmation" name="password-confirmation"><br>
 
+                  <label for="phone">TELÉFONO (opcional)</label><br>
+                  <input type="tel" id="phone" name="phone"><br>
+                  
+                  <label for="dispositivo">Tipo de dispositivo (Smartwatch, Banda Deportiva, Ciclocomputador o Audífonos)</label><br>
+                  <input type="tel" id="device" name="techDevice"><br>
+                  
+                  <label for="serialNumber">Número de serie</label><br>
+                  <input type="tel" id="serial" name="serialNumb"><br>
+                
 
-    </body>
+                  <div class="submitb">
+                    <button type="submit" class="btn" id="btnSubmit">Registrar</button>
+                  </div>
+
+                  <article
+                    class="persona"
+                    data-id="1"
+                    data-username="nico"
+                    data-password="nico1234">
+                </article>  
+              </form>
+            </div>
+          </section>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+
+  </body>
 </html>

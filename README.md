@@ -13,16 +13,16 @@ La página del login tiene un botón de inicio de sesión y otro para ir a la ve
 const listaUsuarios = [
     {   
         username: "nico@profesor.duoc.cl", 
-        password: "Nico1234",
+        password: "Nico123!",
     },
     
     {   
         username: "juan@duoc.cl",
-        password: "Aaaaa123",
+        password: "Aaaaa12!",
     },
     {
         username: "felipe@duoc.cl", 
-        password: "Moyaaa67",
+        password: "Moyaaa6!",
     }
 ]
 
@@ -35,8 +35,8 @@ Aquí hay algunos ejemplos de datos válidos que se pueden ingresar en el regist
     {   
         id: 1,
         nombre: "Nicolas Perez",
-        username: "jorge@profesor.duoc.cl", 
-        password: "Jorg1234",
+        username: "nic@profesor.duoc.cl", 
+        password: "Nicc123!",
         telefono: "917111111",
         techDevice: [{device: "Smartwatch", serial: "PRODUCT11111"}],
     },
@@ -45,7 +45,7 @@ Aquí hay algunos ejemplos de datos válidos que se pueden ingresar en el regist
         id: 2,
         nombre: "Jaime Lopez",
         username: "jaime@duoc.cl",
-        password: "aa123456",
+        password: "Aa12345!",
         telefono: "913131313",
         techDevice: [{device: "Banda Deportiva", serial: "PRODUCT11222"}],
 
@@ -55,7 +55,7 @@ Aquí hay algunos ejemplos de datos válidos que se pueden ingresar en el regist
         id: 3,
         nombre: "Felipe Moya",
         username: "feli@duoc.cl", 
-        password: "moya6767",
+        password: "Moya676!",
         telefono: "914141414",
         techDevice: [{device: "Ciclocomputador", serial: "PRODUCT11333"}],
     }

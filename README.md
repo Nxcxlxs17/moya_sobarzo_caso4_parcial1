@@ -18,11 +18,11 @@ const listaUsuarios = [
     
     {   
         username: "juan@duoc.cl",
-        password: "aa123",
+        password: "Aaaaa123",
     },
     {
         username: "felipe@duoc.cl", 
-        password: "moya67",
+        password: "Moyaaa67",
     }
 ]
 
@@ -43,8 +43,8 @@ Aquí hay algunos ejemplos de datos válidos que se pueden ingresar en el regist
     
     {   
         id: 2,
-        nombre: "Juan Lopez",
-        username: "juan@duoc.cl",
+        nombre: "Jaime Lopez",
+        username: "jaime@duoc.cl",
         password: "aa123456",
         telefono: "913131313",
         techDevice: [{device: "Banda Deportiva", serial: "PRODUCT11222"}],
@@ -54,7 +54,7 @@ Aquí hay algunos ejemplos de datos válidos que se pueden ingresar en el regist
     {
         id: 3,
         nombre: "Felipe Moya",
-        username: "felipe@duoc.cl", 
+        username: "feli@duoc.cl", 
         password: "moya6767",
         telefono: "914141414",
         techDevice: [{device: "Ciclocomputador", serial: "PRODUCT11333"}],

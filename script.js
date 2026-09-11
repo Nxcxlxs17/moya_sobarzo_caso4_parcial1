@@ -31,6 +31,9 @@ const listaUsuarios = [
 let dispositivosTemporales =[];
 
 
+
+//BOTÓN DEL LOGIN
+
 const formLogin = document.getElementById("cuerpo-login");
 
 if (formLogin){
@@ -58,9 +61,9 @@ if (formLogin){
 }   
 
 
-// -------------------------------------------------------------
-// 1. EVENTO BOTÓN "REGISTRAR DISPOSITIVO"
-// -------------------------------------------------------------
+
+//BOTÓN DEL REGISTRO DE DISPOSITIVO
+
 const btnSubmitDevice = document.getElementById("btnSubmitDevice");
 
 if (btnSubmitDevice) {
@@ -73,29 +76,45 @@ if (btnSubmitDevice) {
         const tiposValidos = ["Smartwatch", "Banda Deportiva", "Ciclocomputador", "Audífonos"];
         const regexSerial = /^[a-zA-Z0-9]{12}$/;
 
+        let erroresDis = [];
+
         if (!tiposValidos.includes(inputDevice)) {
-            alert("Tipo de dispositivo no válido. Debe ser: Smartwatch, Banda Deportiva, Ciclocomputador o Audífonos.");
-            return;
+            erroresDis.push("Tipo de dispositivo no válido. Debe ser: Smartwatch, Banda Deportiva, Ciclocomputador o Audífonos.");
         }
 
         if (!regexSerial.test(inputSerial)) {
-            alert("El número de serie debe tener exactamente 12 caracteres alfanuméricos.");
-            return;
+            erroresDis.push("El número de serie debe tener exactamente 12 caracteres alfanuméricos.");
         }
 
+
+        if(erroresDis.length > 0){
+                alert("Por favor corrige los siguientes errores: \n\n- " + erroresDis.join("\n- "));
+            } else {
         // Guardar en el arreglo temporal
-        dispositivosTemporales.push({
+        const nuevoDispositivo = {
             device: inputDevice,
             serial: inputSerial
+        };
+
+        dispositivosTemporales.push({
+            nuevoDispositivo
         });
+
+        console.log("Dispositivo registrado con exito.", nuevoDispositivo);
+
 
         // Limpiar los campos para ingresar otro
         document.getElementById("device").value = "";
         document.getElementById("serial").value = "";
-    });
+
+        alert("Registro exitoso del dispositivo.");
+    }
+    })
+    
 }
 
 
+//BOTÓN DEL REGISTRO DE USUARIO
 const formRegistro = document.querySelector(".cuerpo-login");
 
 if(formRegistro && !formLogin) {

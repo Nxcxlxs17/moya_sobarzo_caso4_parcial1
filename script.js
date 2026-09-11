@@ -1,16 +1,16 @@
 const listaUsuarios = [
     {   
         username: "nico@profesor.duoc.cl", 
-        password: "Nico1234",
+        password: "Nico123!",
     },
     
     {   
         username: "juan@duoc.cl",
-        password: "Aaaaa123",   
+        password: "Aaaaa12!",   
     },
     {
         username: "felipe@duoc.cl", 
-        password: "Moyaaa67",
+        password: "Moyaaa6!",
         }
 ]
 

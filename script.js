@@ -1,31 +1,17 @@
 const listaUsuarios = [
     {   
-        id: 1,
-        nombre: "Nicolas Perez",
         username: "nico@profesor.duoc.cl", 
         password: "Nico1234",
-        telefono: "917111111",
-        techDevice: [{device: "Smartwatch", serial: "PRODUCT11111"}],
     },
     
     {   
-        id: 2,
-        nombre: "Juan Lopez",
         username: "juan@duoc.cl",
-        password: "aa123",
-        telefono: "913131313",
-        techDevice: [{device: "Banda Deportiva", serial: "PRODUCT11222"}],
-
-        
+        password: "Aaaaa123",   
     },
     {
-        id: 3,
-        nombre: "Felipe Moya",
         username: "felipe@duoc.cl", 
-        password: "moya67",
-        telefono: "914141414",
-        techDevice: [{device: "Ciclocomputador", serial: "PRODUCT11333"}],
-    }
+        password: "Moyaaa67",
+        }
 ]
 
 let dispositivosTemporales =[];

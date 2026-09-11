@@ -3,7 +3,7 @@ const listaUsuarios = [
         id: 1,
         nombre: "Nicolas Perez",
         username: "nico@profesor.duoc.cl", 
-        password: "nico1234",
+        password: "Nico1234",
         telefono: "917111111",
         techDevice: [{device: "Smartwatch", serial: "PRODUCT11111"}],
     },
@@ -30,7 +30,13 @@ const listaUsuarios = [
 
 let dispositivosTemporales =[];
 
-
+// BOTON REGISTRO
+const formLoginb = document.getElementById("btnRegisterUser");
+if(formLoginb){
+    formLoginb.addEventListener("click", function(event){
+        window.location.href="registro.html"
+    });
+}
 
 //BOTÓN DEL LOGIN
 
@@ -123,7 +129,6 @@ if(formRegistro && !formLogin) {
 
         const nombre = document.getElementById("nombre").value.trim();
         const username = document.getElementById("username").value.trim().toLowerCase();
-        const mailConfirmation = document.getElementById("mail-confirmation").value.trim().toLowerCase();
         const password = document.getElementById("password").value;
         const passwordConfirmation = document.getElementById("password-confirmation").value;
         const phone = document.getElementById("phone").value.trim();
@@ -151,9 +156,6 @@ if(formRegistro && !formLogin) {
             }
         }
 
-        if(username !== mailConfirmation){
-            errores.push("La confirmacion del correo no coincide")
-        }
 
         let mayusculas = 0;
         let tieneMinuscula = false;
@@ -245,7 +247,7 @@ if(formRegistro && !formLogin) {
                 console.log("Usuario registrado con exito.", nuevoUsuario);
                 console.log("Lista actualizada: ", listaUsuarios);
 
-                alert("Registro exitoso Usuario guardado.");
+                alert("Usuario registrado con éxito.");
                 window.location.href = "login.html";
             }
     })

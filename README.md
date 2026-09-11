@@ -30,4 +30,36 @@ Al iniciar sesión será dirigido al home de la página, el cual no está termin
 
 En la ventana de registro de usuario, una vez completado el registro de al menos un dispositivo (realizado con el botón de registrar dispositivo) y de los datos del usuario (con el botón de registrar usuario), será dirigido a la página del login.
 
+Aquí hay algunos ejemplos de datos válidos que se pueden ingresar en el registro:
+
+    {   
+        id: 1,
+        nombre: "Nicolas Perez",
+        username: "jorge@profesor.duoc.cl", 
+        password: "Jorg1234",
+        telefono: "917111111",
+        techDevice: [{device: "Smartwatch", serial: "PRODUCT11111"}],
+    },
+    
+    {   
+        id: 2,
+        nombre: "Juan Lopez",
+        username: "juan@duoc.cl",
+        password: "aa123456",
+        telefono: "913131313",
+        techDevice: [{device: "Banda Deportiva", serial: "PRODUCT11222"}],
+
+        
+    },
+    {
+        id: 3,
+        nombre: "Felipe Moya",
+        username: "felipe@duoc.cl", 
+        password: "moya6767",
+        telefono: "914141414",
+        techDevice: [{device: "Ciclocomputador", serial: "PRODUCT11333"}],
+    }
+
+
+
 Tanto la página del login como la del registro poseen una serie de condiciones en los campos a completar que son informadas oportunamente al usuario en caso de cometer algún error. 

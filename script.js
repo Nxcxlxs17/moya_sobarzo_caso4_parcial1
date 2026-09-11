@@ -40,14 +40,16 @@ if (formLogin){
         return user.username === inputUser && user.password === inputPass;
         });
 
-        if(usuarioEncontrado){
+        if(inputUser.trim() === "" || inputPass.trim() === ""){
+            alert("Debe ingresar un correo y una contraseña.");
+        } else if(usuarioEncontrado){
             console.log("Inicio de Sesion exitosa");
             console.log("ID del usuario registrado:", usuarioEncontrado.id);
             alert("Bienvenido a TECNOFIT, " + usuarioEncontrado.username);
-            window.location.href = "home.html"
+            window.location.href = "home.html";
         } else {
-            console.log("Datos ingresados incorrectos.")
-            alert("Usuario o contraseña incorrectos");
+            console.log("Datos ingresados incorrectos.");
+            alert("Usuario o contraseña incorrectos.");
         }
         });   
 }   
